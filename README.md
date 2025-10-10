@@ -41,7 +41,11 @@ Ensure the following tools and files are installed or downloaded and accessible 
       gunzip snp151.txt.gz
       ```
 
----
+### **Workflow**:
+<p align="center">
+  <img src="./Liftover_Workflow.png" alt="Workflow diagram" width="1500"/>
+</p>
+
 
 ## **Usage**
 
