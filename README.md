@@ -31,21 +31,34 @@ Ensure the following tools and files are installed or downloaded and accessible 
    - GNU AWK for custom text processing.
 
 ### **Reference File**:
+- **hg38.fa**:
+  - https://hgdownload.cse.ucsc.edu/goldenpath/hg38/bigZips/
+  - 
+ 
+- **hg19.fa**:
+  - https://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/
+
 - **snp151.txt.gz**:
   - Download from the UCSC Genome Browser database:
-    [hg19 database directory](ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/)
+    - https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/snp151.txt.gz
   - Description:
     - The file contains a dump of the UCSC genome annotation database for the February 2009 human genome assembly (hg19/GRCh37).
     - Ensure you uncompress it using `gunzip` before usage:
       ```bash
       gunzip snp151.txt.gz
       ```
+ - Will need to sort this.
 
-### **Workflow**:
-<p align="center">
-  <img src="./Liftover_Workflow.png" alt="Workflow diagram" width="1500"/>
-</p>
-
+- **hg19ToHg38.over.chain.gz**:
+  - Download from the UCSC Genome Browser database:
+    https://hgdownload.soe.ucsc.edu/gbdb/hg19/liftOver/hg19ToHg38.over.chain.gz
+  - Description:
+    - The file contains a dump of the UCSC genome annotation database for the February 2009 human genome assembly (hg19/GRCh37).
+    - Ensure you uncompress it using `gunzip` before usage:
+      ```bash
+      gunzip snp151.txt.gz
+      ```
+ - Will need to sort this.
 
 ## **Usage**
 
@@ -54,3 +67,31 @@ Ensure the following tools and files are installed or downloaded and accessible 
 ```bash
 git clone https://github.com/your-username/liftover-pipeline.git
 cd liftover-pipeline
+```
+
+### **2. Gather input files/software**
+1)hg19.fa
+2)hg38.fa
+3)snp151.txt.gz
+4)hg19ToHg38.over.chain.gz
+5)liftOver (UCSC tool)
+
+Put files in scripts directory
+
+### **3. Run Pipeline**
+```bash
+      bash liftover_hg19.sh path/to/dataset/nosuffix dataset
+      ```
+An example would be:
+bash liftover_hg19.sh /s3buckets/ADGCdatasets/ADGC_NHW/ACT3/CleanedGenotypes/ACT3.clean.nhw ACT3
+dataset is ACT3.clean.nhw
+
+Note that the bed/bim/fam files are ACT3.clean.nhw.bed/bim/fam so the command takes the path without the suffix of bed/bim/fam
+
+
+### **Workflow**:
+<p align="center">
+  <img src="./Liftover_Workflow.png" alt="Workflow diagram" width="1500"/>
+</p>
+
+
