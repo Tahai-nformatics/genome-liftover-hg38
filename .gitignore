@@ -9,7 +9,6 @@
 *.bed
 *.chain
 *.fa
-*.fai
 
 # Logs
 *.log
