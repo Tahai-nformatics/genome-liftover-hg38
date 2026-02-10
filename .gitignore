@@ -1,0 +1,23 @@
+# Large / generated files
+*.tar
+*.tar.gz
+*.bin
+*.dat
+*.vcf
+*.vcf.gz
+*.tsv
+*.bed
+*.chain
+*.fa
+*.fai
+
+# Logs
+*.log
+*.out
+*.err
+
+# Temp / editor files
+*.swp
+*~
+.DS_Store
+
