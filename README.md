@@ -81,12 +81,17 @@ Put files in scripts directory
 ### **3. Run Pipeline**
 ```bash
       bash liftover_hg19.sh path/to/dataset/nosuffix dataset
-      ```
+```
+
+
 An example would be:
+```bash
 bash liftover_hg19.sh /s3buckets/ADGCdatasets/ADGC_NHW/ACT3/CleanedGenotypes/ACT3.clean.nhw ACT3
+```
 dataset is ACT3.clean.nhw
 
-Note that the bed/bim/fam files are ACT3.clean.nhw.bed/bim/fam so the command takes the path without the suffix of bed/bim/fam
+
+**Note:** that the bed/bim/fam files are ACT3.clean.nhw.bed/bim/fam so the command takes the path without the suffix of bed/bim/fam
 
 
 ### **Workflow**:
